@@ -6,7 +6,7 @@
 /*   By: jdupuis <jdupuis@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/14 17:04:06 by jdupuis           #+#    #+#             */
-/*   Updated: 2026/10/29 17:14:03 by jdupuis          ###   ########.fr       */
+/*   Updated: 2026/10/29 18:08:34 by jdupuis          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include <pthread.h>
 # include <stdbool.h>
 # include <stdlib.h>
+# include <stdint.h>
 # include <string.h>
 # include <sys/mman.h>
 

@@ -3,7 +3,7 @@ ifeq ($(HOSTTYPE),)
 endif
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -fPIC -Iincludes
+CFLAGS = -Wall -Wextra -Werror -fPIC -D_GNU_SOURCE -pthread -Iincludes
 NAME = libft_malloc_$(HOSTTYPE).so
 LINK_NAME = libft_malloc.so
 OBJDIR = objs

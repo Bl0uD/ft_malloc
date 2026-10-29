@@ -31,7 +31,7 @@ for t in "${TESTS[@]}"; do
     echo -e "${BLUE}----------------------------------------------------${RESET}"
     echo -e "${BOLD}${BLUE}Exécution de tests/${t}.c${RESET}"
     echo -e "${BLUE}----------------------------------------------------${RESET}"
-    cc -Wall -Wextra -Werror -Iincludes "tests/${t}.c" -L. -lft_malloc -o "tests/bin_${t}"
+    cc -Wall -Wextra -Werror -pthread -Iincludes "tests/${t}.c" -L. -lft_malloc -o "tests/bin_${t}"
     if [ $? -ne 0 ]; then
         echo -e "${RED}[ERREUR] Compilation de ${t}.c échouée.${RESET}"
         exit 1
