@@ -6,12 +6,16 @@
 /*   By: jdupuis <jdupuis@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/14 17:04:06 by jdupuis           #+#    #+#             */
-/*   Updated: 2026/10/29 18:08:34 by jdupuis          ###   ########.fr       */
+/*   Updated: 2026/10/29 18:25:28 by jdupuis          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MALLOC_H
 # define MALLOC_H
+
+# ifndef _GNU_SOURCE
+#  define _GNU_SOURCE
+# endif
 
 # define TINY_MAX 1024
 # define SMALL_MAX 32768
@@ -24,6 +28,10 @@
 # include <stdint.h>
 # include <string.h>
 # include <sys/mman.h>
+
+# ifndef PTHREAD_RECURSIVE_MUTEX_INITIALIZER
+#  define PTHREAD_RECURSIVE_MUTEX_INITIALIZER PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP
+# endif
 
 enum ZONE {
 	ZONE_TINY,

@@ -13,7 +13,7 @@
 #include "../includes/malloc.h"
 
 t_malloc_state	g_state = {NULL, NULL, NULL, 0, false, false};
-pthread_mutex_t	g_mutex = PTHREAD_MUTEX_INITIALIZER;
+pthread_mutex_t	g_mutex = PTHREAD_RECURSIVE_MUTEX_INITIALIZER;
 
 static void	add_zone(t_zone **list, t_zone *new_zone)
 {
