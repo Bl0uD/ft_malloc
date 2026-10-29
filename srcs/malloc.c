@@ -6,14 +6,14 @@
 /*   By: jdupuis <jdupuis@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 17:26:49 by jdupuis           #+#    #+#             */
-/*   Updated: 2026/10/29 18:08:51 by jdupuis          ###   ########.fr       */
+/*   Updated: 2026/10/29 18:12:10 by jdupuis          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/malloc.h"
 
 t_malloc_state	g_state = {NULL, NULL, NULL, 0, false, false};
-pthread_mutex_t	g_mutex = PTHREAD_RECURSIVE_MUTEX_INITIALIZER;
+pthread_mutex_t	g_mutex = PTHREAD_MUTEX_INITIALIZER;
 
 static void	add_zone(t_zone **list, t_zone *new_zone)
 {

@@ -6,7 +6,7 @@
 /*   By: jdupuis <jdupuis@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/29 17:10:48 by jdupuis           #+#    #+#             */
-/*   Updated: 2026/10/29 17:33:36 by jdupuis          ###   ########.fr       */
+/*   Updated: 2026/10/29 18:16:02 by jdupuis          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@ void	init_malloc(void)
 {
 	if (g_state.is_initialized)
 		return ;
+
+	pthread_mutexattr_t	attr;
+	pthread_mutexattr_init(&attr);
+	pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE);
+	pthread_mutex_init(&g_mutex, &attr);
+	pthread_mutexattr_destroy(&attr);
 
 	g_state.page_size = getpagesize();
 	g_state.debug_mode = (getenv("MALLOC_DEBUG") != NULL);
